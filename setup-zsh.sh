@@ -2,7 +2,7 @@
 # this is the setup script for my configuration of zsh & ohmyzsh
 # you can run it by downloading and running this script
 # or for a quicker alternative, just run it with the following command:
-# sh -c "$(curl -fsSL https://gist.githubusercontent.com/eazee/fafa83be0a3af432eb1677146723a095/raw/cb3ab28cbfaa3c3953b9a3c7178a80ddde50d4bf/setup-zsh.sh)"
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/eazee/zeesh/master/setup-zsh.sh)"
 
 # make sure zsh is installed
 if [ ! -f /usr/bin/zsh ]; then
@@ -54,7 +54,7 @@ fi
 
 if [ ! -f $OMZ_TARGET/themes/extcloud.zsh-theme ]; then
 	echo "downloading extcloud theme..."
-	curl -fsSL https://gist.githubusercontent.com/eazee/d371e4017c8f20a44f783402c902c981/raw/53b7d9d22e2c6ecdc5fc5e94dc1af41d173044d7/extcloud.zsh-theme > $OMZ_TARGET/themes/extcloud.zsh-theme
+	curl -fsSL https://raw.githubusercontent.com/eazee/zeesh/master/extcloud.zsh-theme > $OMZ_TARGET/themes/extcloud.zsh-theme
 else
 	echo "extcloud theme already installed :)"
 fi
@@ -75,7 +75,7 @@ read -p "Do you want to clone the .zshrc from github.com/eazee? " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
 	echo "cloning zshrc into $HOME/.zshrc"
-	curl -fsSL https://gist.githubusercontent.com/eazee/2872fa9bbf7d855aa70f72730218c6b9/raw/5164a0ec2a0db6b35a1bdd883b218a6bb471afea/.zshrc > $HOME/.zshrc
+	curl -fsSL https://raw.githubusercontent.com/eazee/zeesh/master/.zshrc > $HOME/.zshrc
 fi
 
 echo "all done! you'll need to restart your terminal to see the difference."
