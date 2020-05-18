@@ -17,7 +17,9 @@ fi
 # if .oh-my-zsh is not installed
 if [ ! -e $HOME/.oh-my-zsh ]; then
 	echo "installing ohmyzsh..."
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended
+	curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh > $HOME/.zsh-install.tmp.sh
+	sh $HOME/.zsh-install.tmp.sh --unattended
+	rm $HOME/.zsh-install.tmp.sh
 else
 	echo "ohmyzsh already installed :)"
 fi
@@ -27,7 +29,7 @@ OMZ_TARGET=${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}
 # syntax highlighting plugin
 if [ ! -e $OMZ_TARGET/plugins/zsh-syntax-highlighting ]; then
 	echo "installing zsh-syntax-highlighting..."
-	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $OMZ_TARGET/plugins/zsh-syntax-highlighting
+	git clone -q https://github.com/zsh-users/zsh-syntax-highlighting.git $OMZ_TARGET/plugins/zsh-syntax-highlighting
 else
 	echo "zsh-syntax-highlighting already installed :)"
 fi
@@ -35,7 +37,7 @@ fi
 # autosuggestions
 if [ ! -e $OMZ_TARGET/plugins/zsh-autosuggestions ]; then
 	echo "installing zsh-autosuggestions..."
-	git clone https://github.com/zsh-users/zsh-autosuggestions $OMZ_TARGET/plugins/zsh-autosuggestions
+	git clone -q https://github.com/zsh-users/zsh-autosuggestions $OMZ_TARGET/plugins/zsh-autosuggestions
 else
 	echo "zsh-autosuggestions already installed :)"
 fi
@@ -43,7 +45,9 @@ fi
 # nginx
 if [ ! -e $OMZ_TARGET/plugins/nginx ]; then
 	echo "installing nginx plugin..."
-	git clone https://github.com/miklos-martin/oh-my-zsh-plugins $HOME/.installed/miklos-martin-plugins
+	if [ ! -e $HOME/.installed/miklos-martin-plugins ]; then
+		git clone -q https://github.com/miklos-martin/oh-my-zsh-plugins $HOME/.installed/miklos-martin-plugins 
+	fi
 	ln -s $HOME/.installed/miklos-martin-plugins/nginx $OMZ_TARGET/plugins/nginx
 else
 	echo "nginx plugin already installed :)"
