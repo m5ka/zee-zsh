@@ -59,9 +59,9 @@ else
 	echo "extcloud theme already installed :)"
 fi
 
-read -p "Do you want to change your shell to zsh? " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
+echo -n "Do you want to change your shell to zsh? "
+read reply
+if [ $reply = "Y" ] || [ $reply = "y" ]; then
 	if [ ! $SHELL = "/usr/bin/zsh" ]; then
 		echo "changing shell to zsh..."
 		chsh -s /usr/bin/zsh $USER
@@ -71,9 +71,9 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 # choice whether to get zshrc or not
-read -p "Do you want to clone the .zshrc from github.com/eazee? " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
+echo -n "Do you want to clone the .zshrc from github.com/eazee? "
+read reply
+if [ $reply = "Y" ] || [ $reply = "y" ] ; then
 	echo "cloning zshrc into $HOME/.zshrc"
 	curl -fsSL https://raw.githubusercontent.com/eazee/zeesh/master/.zshrc > $HOME/.zshrc
 fi
