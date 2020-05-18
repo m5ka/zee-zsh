@@ -17,10 +17,7 @@ fi
 # if .oh-my-zsh is not installed
 if [ ! -e $HOME/.oh-my-zsh ]; then
 	echo "installing ohmyzsh..."
-	CHSH=no
-	RUNZSH=no
-	KEEP_ZSHRC=yes
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended
 else
 	echo "ohmyzsh already installed :)"
 fi
