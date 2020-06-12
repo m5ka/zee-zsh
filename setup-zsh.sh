@@ -53,6 +53,14 @@ else
 	echo "nginx plugin already installed :)"
 fi
 
+# custom theme (ext-arrow)
+if [ ! -e $OMZ_TARGET/themes/ext-arrow.zsh-theme ]; then
+	echo "downloading ext-arrow theme"
+	curl -fsSL https://raw.githubusercontent.com/eazee/zeesh/master/ext-arrow.zsh-theme > $OMZ_TARGET/themes/ext-arrow.zsh-theme
+else
+	echo "ext-arrow theme already installed"
+fi
+
 echo -n "Do you want to change your shell to zsh? "
 read reply
 if [ $reply = "Y" ] || [ $reply = "y" ]; then

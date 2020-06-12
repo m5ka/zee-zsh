@@ -3,7 +3,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # theme & plugins
-ZSH_THEME="arrow"
+ZSH_THEME="ext-arrow"
 plugins=(git nginx npm zsh-syntax-highlighting zsh-autosuggestions globalias)
 
 # oh-my-zsh
