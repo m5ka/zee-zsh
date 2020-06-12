@@ -3,7 +3,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # theme & plugins
-ZSH_THEME="extcloud"
+ZSH_THEME="arrow"
 plugins=(git nginx npm zsh-syntax-highlighting zsh-autosuggestions globalias)
 
 # oh-my-zsh
