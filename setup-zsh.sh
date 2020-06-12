@@ -53,13 +53,6 @@ else
 	echo "nginx plugin already installed :)"
 fi
 
-if [ ! -f $OMZ_TARGET/themes/extcloud.zsh-theme ]; then
-	echo "downloading extcloud theme..."
-	curl -fsSL https://raw.githubusercontent.com/eazee/zeesh/master/extcloud.zsh-theme > $OMZ_TARGET/themes/extcloud.zsh-theme
-else
-	echo "extcloud theme already installed :)"
-fi
-
 echo -n "Do you want to change your shell to zsh? "
 read reply
 if [ $reply = "Y" ] || [ $reply = "y" ]; then
