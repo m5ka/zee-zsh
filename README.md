@@ -3,5 +3,5 @@ my customisation of zsh, for my own reference (but feel free to give it a try if
 
 ## get started
 ```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/eazee/zeesh/master/setup-zsh.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/zeeonbees/zeesh/master/setup-zsh.sh)"
 ```
