@@ -13,10 +13,9 @@ source $ZSH/oh-my-zsh.sh
 # general
 alias c='clear'
 alias x='exit'
-alias -g G='| grep --color=auto -P'
 alias ls='ls --color=tty -AF'
+alias -g G='| grep --color=auto -P'
 alias -g L='| less'
-alias ffs='sudo !!'
 # system information
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias distro='cat /etc/*-release'
@@ -27,11 +26,13 @@ alias v='vim'
 alias vv='sudo vim'
 alias untar='tar -xzf'
 alias mine='sudo chown -R $USER:$USER'
+alias runnable='sudo chmod +x'
 # service management
 alias sc='sudo systemctl'
 alias scup='sudo systemctl start'
 alias scdown='sudo systemctl stop'
 alias scenable='sudo systemctl enable'
+alias scdisable='sudo systemctl disable'
 alias scre='sudo systemctl restart'
 alias scst='sudo systemctl status'
 # package management
@@ -40,9 +41,8 @@ alias grab!='sudo apt install -y'
 alias sup='sudo apt update'
 alias sapt='sudo apt'
 # shell config management
-alias zshrc='vim ~/.zshrc'
+alias zshrc='vim ~/.zshrc && source ~/.zshrc'
 alias profile='vim ~/.profile.zsh'
-alias reload='source ~/.zshrc'
 
 # load custom shell profile if exists
 if [ -f "$HOME/.profile.zsh" ]; then
