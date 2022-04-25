@@ -2,7 +2,7 @@
 # this is the setup script for my configuration of zsh & ohmyzsh
 # you can run it by downloading and running this script
 # or for a quicker alternative, just run it with the following command:
-# sh -c "$(curl -fsSL https://raw.githubusercontent.com/zeeonbees/zee-zsh/master/setup-zsh.sh)"
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/marzusia/zee-zsh/master/setup-zsh.sh)"
 
 # make sure zsh is installed
 if [ ! -f /usr/bin/zsh ]; then
@@ -56,7 +56,7 @@ fi
 # custom theme (ext-arrow)
 if [ ! -e $OMZ_TARGET/themes/ext-arrow.zsh-theme ]; then
 	echo "downloading ext-arrow theme"
-	curl -fsSL https://raw.githubusercontent.com/zeeonbees/zee-zsh/master/ext-arrow.zsh-theme > $OMZ_TARGET/themes/ext-arrow.zsh-theme
+	curl -fsSL https://raw.githubusercontent.com/marzusia/zee-zsh/master/ext-arrow.zsh-theme > $OMZ_TARGET/themes/ext-arrow.zsh-theme
 else
 	echo "ext-arrow theme already installed"
 fi
@@ -74,11 +74,11 @@ if [ $reply = "Y" ] || [ $reply = "y" ]; then
 fi
 
 # choice whether to get zshrc or not
-echo -n "Do you want to clone the .zshrc from github.com/zeeonbees? "
+echo -n "Do you want to clone the .zshrc from github.com/marzusia? "
 read reply
 if [ $reply = "Y" ] || [ $reply = "y" ] ; then
 	echo "cloning zshrc into $HOME/.zshrc"
-	curl -fsSL https://raw.githubusercontent.com/zeeonbees/zee-zsh/master/.zshrc > $HOME/.zshrc
+	curl -fsSL https://raw.githubusercontent.com/marzusia/zee-zsh/master/.zshrc > $HOME/.zshrc
 fi
 
 echo "all done! you'll need to restart your terminal to see the difference."
